@@ -1,85 +1,211 @@
-/* ========= Variabel warna ========= */
-:root{
-  --biru:#2979ff;
-  --biru-tua:#0d47a1;
-  --kuning:#ffb300;
-  --abu:#f1f6ff;
-  --putih:#ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-/* ========= Global ========= */
-*{box-sizing:border-box;scroll-behavior:smooth;}
-body{
-  margin:0;
-  font-family:'Segoe UI',Tahoma,sans-serif;
-  background:linear-gradient(135deg,var(--abu),var(--putih));
-  color:#333;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f2f7ff, #e6f0ff);
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 60px;
 }
 
-/* ========= Header ========= */
-.hero{
-  text-align:center;
-  padding:40px 20px;
-  background:linear-gradient(135deg,var(--biru),var(--biru-tua));
-  color:var(--putih);
-}
-.hero .sub{opacity:.8;margin-top:8px}
-
-/* ========= Kontainer utama ========= */
-.container{
-  max-width:960px;margin:auto;padding:30px 20px;
+header.hero {
+  background: linear-gradient(to right, #1e88e5, #42a5f5);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* ========= Section & animasi ========= */
-.section{
-  margin-bottom:50px;opacity:0;transform:translateY(40px);
-  transition:all .8s ease-out;
-}
-.section.show{opacity:1;transform:none;}
-.section h2{color:var(--biru-tua);display:flex;align-items:center;gap:8px}
-
-/* ========= Formula ========= */
-.formula{
-  background:var(--abu);padding:15px;border-radius:8px;
-  overflow-x:auto;margin:18px 0;font-size:1.05rem;
+header.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 1s ease;
 }
 
-/* ========= Contoh & pembahasan ========= */
-details summary{cursor:pointer;font-weight:600;margin:10px 0;color:var(--biru)}
-.pembahasan{background:#e8f5e9;padding:12px;border-radius:6px}
+header.hero .sub {
+  font-size: 1.2rem;
+  animation: fadeIn 2s ease;
+}
 
-/* ========= Matrix input & tombol ========= */
-.matrix-input{margin-top:20px;text-align:center}
-.matrix-input table{margin:auto;border-spacing:8px}
-.matrix-input input{
-  width:70px;height:44px;text-align:center;font-size:1rem;
-  border:2px solid #ddd;border-radius:6px;
-  transition:border-color .3s,box-shadow .3s;
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
 }
-.matrix-input input:focus{
-  border-color:var(--biru);box-shadow:0 0 8px rgba(41,121,255,.4);outline:none;
-}
-.btn-group{margin-top:18px;display:flex;justify-content:center;gap:12px}
-button{
-  background:var(--biru);color:#fff;border:none;border-radius:8px;
-  padding:12px 26px;font-size:1rem;font-weight:600;cursor:pointer;
-  transition:transform .2s,background .3s;
-}
-button:hover{background:var(--kuning);transform:translateY(-3px)}
-button:active{transform:translateY(0)}
 
-/* ========= Hasil ========= */
-.hasil{margin-top:25px}
-.result-card{
-  background:#fafafa;border-left:6px solid var(--biru);
-  padding:18px;border-radius:8px;margin-bottom:20px;
-  animation:fadeIn .6s ease;
+.section {
+  margin-bottom: 3rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
-.result-card h3{margin-top:0}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* ========= Footer ========= */
-.footer{
-  background:var(--biru-tua);color:var(--putih);
-  text-align:center;padding:18px;font-size:.9rem;
+.section:hover {
+  transform: translateY(-3px);
+}
+
+h2 {
+  color: #1e88e5;
+  margin-bottom: 1rem;
+}
+
+.formula pre {
+  background: #eef;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.btn-isi {
+  background: #fdd835;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-isi:hover {
+  background: #fbc02d;
+}
+
+.matrix-input table {
+  width: 100%;
+  margin: 1rem 0;
+  border-spacing: 10px;
+  text-align: center;
+}
+
+.matrix-input input {
+  width: 60px;
+  height: 40px;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #2196f3;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.matrix-input input:focus {
+  border-color: #0d47a1;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.btn-group button {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-group button:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+}
+
+.hasil {
+  margin-top: 1.5rem;
+}
+
+.hasil-box {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+.hasil-box.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pembahasan {
+  margin-top: 1rem;
+  animation: fadeIn 1s;
+}
+
+footer.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1e88e5;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #0d47a1;
+}
+
+details[open] summary::after {
+  content: " ▲";
+}
+details summary::after {
+  content: " ▼";
+}
+
+/* Animasi tambahan */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
